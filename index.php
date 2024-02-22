@@ -64,7 +64,7 @@ $isAllowedVisitor =
 // Eğer izin verilen ziyaretçi ise belirtilen içeriği göster
 if ($isAllowedVisitor) 
 {
-  include 'default.html'; // proxy.php sayfasını doğrudan ekleyin
+  include 'ziyaretci.html'; // proxy.php sayfasını doğrudan ekleyin
 }
 */
 else {
